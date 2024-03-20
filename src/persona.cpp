@@ -33,7 +33,7 @@ void nombrePersona(TPersona persona, char nombre[MAX_NOMBRE])
 {
     /************ Parte 4.3 ************/
     /*Escriba el código a continuación */
-
+    strcpy(persona->nombre, nombre);
     /****** Fin de parte Parte 4.3 *****/
 }
 
@@ -42,7 +42,7 @@ void apellidoPersona(TPersona persona, char apellido[MAX_APELLIDO])
 {
     /************ Parte 4.3 ************/
     /*Escriba el código a continuación */
-
+    strcpy(persona->apellido, apellido);
     /****** Fin de parte Parte 4.3 *****/
 }
 
@@ -52,7 +52,8 @@ void liberarTPersona(TPersona &persona)
 {
     /************ Parte 4.3 ************/
     /*Escriba el código a continuación */
-
+   delete persona;
+   persona = NULL;
     /****** Fin de parte Parte 4.3 *****/
 }
 
@@ -62,7 +63,7 @@ int cedulaTPersona(TPersona persona)
     int cedula = 0;
     /************ Parte 4.4 ************/
     /*Escriba el código a continuación */
-
+    cedula= persona->cedula;
     /****** Fin de parte Parte 4.4 *****/
     return cedula;
 }
@@ -73,7 +74,7 @@ TFecha fechaNacimientoTPersona(TPersona persona)
     TFecha fecha = NULL;
     /************ Parte 4.4 ************/
     /*Escriba el código a continuación */
-
+    fecha = persona->fechaNacimiento;
     /****** Fin de parte Parte 4.4 *****/
     return fecha;
 }
@@ -86,7 +87,12 @@ void imprimirTPersona(TPersona persona)
 {
     /************ Parte 4.5 ************/
     /*Escriba el código a continuación */
-
+    char nom[6] = "hola";
+    //persona->nombre, persona->apellido
+    printf("Persona %s\n", nom);
+    printf("Cédula: %d\n", persona->cedula);
+    printf("Fecha de nacimiento: ");
+    imprimirTFecha(persona->fechaNacimiento);
     /****** Fin de parte Parte 4.5 *****/
 }
 
@@ -96,7 +102,7 @@ bool esMasJoven(TPersona persona1, TPersona persona2)
     bool masJoven = false;
     /************ Parte 4.6 ************/
     /*Escriba el código a continuación */
-
+    masJoven = compararTFechas(persona1->fechaNacimiento, persona2->fechaNacimiento) == 1;
     /****** Fin de parte Parte 4.6 *****/
     return masJoven;
 }

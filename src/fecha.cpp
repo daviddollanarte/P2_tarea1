@@ -105,6 +105,6 @@ int compararTFechas(TFecha fecha1, TFecha fecha2)
     nat f2 = fecha2->anio * 10000 + fecha2->mes * 100 + fecha2->dia;
     res = f1 > f2 ? 1 : f2 > f1 ? -1
                                 : 0;
-    /****** Fin de parte Parte 3.10 *****/
+    /****** Fin de parte Parte 3.10 ***/
     return res;
 }
